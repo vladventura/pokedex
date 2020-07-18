@@ -11,19 +11,28 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import "materialize-css/dist/css/materialize.min.css";
-import "materialize-css/dist/js/materialize";
+import "materialize-css/dist/js/materialize.min.js";
 
 import rootReducer from "./store/reducers/rootReducer";
+
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost";
+
+const clt = new ApolloClient({
+  uri: "http://localhost:8000/graphql",
+});
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ApolloProvider client={clt}>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
