@@ -1,3 +1,4 @@
+import actions from "./actionTypes";
 export const setPoke = (data) => {
   return (dispatch, getState) => {
     let action = {};
@@ -5,9 +6,12 @@ export const setPoke = (data) => {
   };
 };
 
-export const getPoke = (data) => {
+export const getPoke = (pk) => {
   return (dispatch, getState) => {
-    let action = {};
+    console.log(pk);
+    let action = {
+      type: actions.GET_POKE,
+    };
     dispatch(action);
   };
 };
