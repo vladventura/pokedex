@@ -94,3 +94,7 @@ I think that I'm mostly doing this app just to learn, but that doesn't take away
 | Current State of the App                        | Goals for next push to master  | Goals for next week              | Goals for next month          |
 | ----------------------------------------------- | ------------------------------ | -------------------------------- | ----------------------------- |
 | As of right now the app hasn't even started yet | Make a design with materialize | Show all Pokemon on the frontend | Implement some kind of search |
+
+# Contributing
+
+Feel free to contribute as much as you want! If you want to contact me, the quickest way to get my attention is to open a PR with the tag "contact" and let me know in the PR comments what do you think. Thanks a lot for even considering contributing!
