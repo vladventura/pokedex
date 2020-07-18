@@ -1,4 +1,5 @@
 import actions from "../actions/actionTypes";
+
 let initState = {
   name: "",
   id: "",
