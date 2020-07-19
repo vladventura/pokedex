@@ -2,13 +2,15 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import "./Pokemon.css";
 import LazyLoad from "react-lazyload";
+import { COLOR_MAP } from "../constants";
 
 const Pokemon = (props) => {
-  const { childId, name, description } = props;
+  const { childId, name, description, type1 } = props;
   const style = {
-    "--color": "red",
-    "--color2": "blue",
+    "--color": COLOR_MAP[props.type1],
+    "--color2": props.type2 ? COLOR_MAP[props.type2] : COLOR_MAP[props.type1],
   };
+  console.log(type1);
   return (
     <Card className="pokemon-card">
       <LazyLoad offset={100} once={true}>
