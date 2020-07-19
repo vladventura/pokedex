@@ -7,5 +7,5 @@
   margin: 1rem;
 }
 img {
-  background: linear-gradient(9deg, var(--color) 60%, var(--color2));
+  background: linear-gradient(9deg, var(--color) 40%, var(--color2));
 }
