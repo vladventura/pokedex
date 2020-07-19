@@ -1,4 +1,4 @@
-name: Test Runner Workflow
+name: Test Runner CI
 
 on:
   push:
@@ -9,9 +9,15 @@ on:
 jobs:
   test_client:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: cd client && npm ci && npm run test
+      - name: Installing Node Dependencies
+        run: npm ci
+      - name: Running Tests
+        run: npm run test
