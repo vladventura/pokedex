@@ -2,7 +2,8 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import Pokemon from "./Pokemon";
-import LazyLoad from "react-lazyload";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const PokemonList = (props) => {
   const QUERY_POKEMON = props.startsWith
@@ -33,19 +34,23 @@ const PokemonList = (props) => {
     );
   } else {
     if (data.pokemons.length) {
-      return data.pokemons.map(({ id, name, description }) => {
-        const capName = name[0].toUpperCase() + name.slice(1);
+      let content = data.pokemons.map(({ id, name, description }) => {
+        let capName = name[0].toUpperCase() + name.slice(1);
         return (
-          <LazyLoad height={300} offset={200}>
-            <Pokemon
-              key={name}
-              childId={id}
-              name={capName}
-              description={description}
-            />
-          </LazyLoad>
+          <Pokemon
+            key={capName}
+            id={name}
+            childId={id}
+            name={capName}
+            description={description}
+          />
         );
       });
+      return (
+        <Col>
+          <Row>{content}</Row>
+        </Col>
+      );
     } else {
       return (
         <div>
