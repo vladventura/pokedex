@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PokemonList from "./components/PokemonList";
 import Container from "react-bootstrap/Container";
 import "./components/ThrottledInput";
+
 import ThrottledInput from "./components/ThrottledInput";
 
 function App() {
