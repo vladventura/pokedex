@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./ThrottledInput.scss";
 export default class ThrottledInput extends Component {
   state = {
     value: this.props.value,
@@ -23,6 +23,8 @@ export default class ThrottledInput extends Component {
   render() {
     return (
       <input
+        className="input-group"
+        placeholder="Start typing a Pokemon's name to search"
         onChange={this.handleChange}
         value={this.state.value}
         id={this.props.id}

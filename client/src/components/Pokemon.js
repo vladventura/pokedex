@@ -1,24 +1,32 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+import "./Pokemon.css";
+import LazyLoad from "react-lazyload";
+import { COLOR_MAP } from "../constants";
+
 const Pokemon = (props) => {
-  const { childId, name, description } = props;
+  const { childId, name, description, type1 } = props;
+  const style = {
+    "--color": COLOR_MAP[props.type1],
+    "--color2": props.type2 ? COLOR_MAP[props.type2] : COLOR_MAP[props.type1],
+  };
+  console.log(type1);
   return (
-    <div className="row" id={childId}>
-      <div className="col s9 m12">
-        <div className="card sticky-action horizontal small green">
-          <div className="card-image">
-            <img
-              className="responsive-img"
-              alt="pokemon"
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${childId}.png`}
-            />
-            <span className="card-title">{name}</span>
-          </div>
-          <div className="card-content">
-            <p>{description}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Card className="pokemon-card">
+      <LazyLoad offset={100} once={true}>
+        <img
+          style={style}
+          className="card-img"
+          as="img"
+          alt="pokemon"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${childId}.png`}
+        />
+      </LazyLoad>
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 

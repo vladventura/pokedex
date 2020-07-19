@@ -4,4 +4,4 @@ venv
 # Local scripts to help me work
 utils
 
-**__pycache__
+**/__pycache__/

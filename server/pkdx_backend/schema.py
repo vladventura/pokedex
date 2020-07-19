@@ -6,7 +6,7 @@ from pkdx_backend.models import Pokemon
 class PokemonType(DjangoObjectType):
     class Meta:
         model = Pokemon
-        fields = ('id', 'name', 'description')
+        fields = ('id', 'name', 'description', 'type1', 'type2')
 
 
 class Query(graphene.ObjectType):
