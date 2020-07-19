@@ -1,26 +1,30 @@
 import React from "react";
-import './Pokemon.scss'
+import Card from "react-bootstrap/Card";
+import "./Pokemon.css";
+import LazyLoad from "react-lazyload";
 
 const Pokemon = (props) => {
   const { childId, name, description } = props;
+  const style = {
+    "--color": "red",
+    "--color2": "blue",
+  };
   return (
-    <div className="row" id={childId}>
-      <div className="col s9 m12">
-        <div className="card horizontal small pokemon-container">
-            <div className="card-image">
-              <img
-                className="responsive-img"
-                alt="pokemon"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${childId}.png`}
-              />
-              <span className="card-title">{name}</span>
-            </div>
-            <div className="card-content">
-              <p>{description}</p>
-            </div>
-        </div>
-      </div>
-    </div>
+    <Card className="pokemon-card">
+      <LazyLoad offset={100} once={true}>
+        <img
+          style={style}
+          className="card-img"
+          as="img"
+          alt="pokemon"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${childId}.png`}
+        />
+      </LazyLoad>
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
