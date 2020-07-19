@@ -13,6 +13,8 @@ const PokemonList = (props) => {
           id
           name
           description
+          type1
+          type2
         }
       }
     `
@@ -22,6 +24,8 @@ const PokemonList = (props) => {
             id
             name
             description
+            type1
+            type2
           }
         }
       `;
@@ -34,18 +38,22 @@ const PokemonList = (props) => {
     );
   } else {
     if (data.pokemons.length) {
-      let content = data.pokemons.map(({ id, name, description }) => {
-        let capName = name[0].toUpperCase() + name.slice(1);
-        return (
-          <Pokemon
-            key={capName}
-            id={name}
-            childId={id}
-            name={capName}
-            description={description}
-          />
-        );
-      });
+      let content = data.pokemons.map(
+        ({ id, name, description, type1, type2 }) => {
+          let capName = name[0].toUpperCase() + name.slice(1);
+          return (
+            <Pokemon
+              key={capName}
+              id={name}
+              childId={id}
+              name={capName}
+              description={description}
+              type1={type1}
+              type2={type2}
+            />
+          );
+        }
+      );
       return (
         <Col>
           <Row>{content}</Row>
