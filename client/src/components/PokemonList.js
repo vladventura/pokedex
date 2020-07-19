@@ -5,6 +5,18 @@ import Pokemon from "./Pokemon";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
+export const GENERAL_QUERY = gql`
+  query {
+    pokemons {
+      id
+      name
+      description
+      type1
+      type2
+    }
+  }
+`;
+
 const PokemonList = (props) => {
   const QUERY_POKEMON = props.startsWith
     ? gql`
@@ -18,17 +30,7 @@ const PokemonList = (props) => {
         }
       }
     `
-    : gql`
-        query {
-          pokemons {
-            id
-            name
-            description
-            type1
-            type2
-          }
-        }
-      `;
+    : GENERAL_QUERY;
   const { data, loading } = useQuery(QUERY_POKEMON);
   if (loading && !data) {
     return (
