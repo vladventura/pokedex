@@ -10,13 +10,12 @@ import { createStore, applyMiddleware } from "redux";
 
 import thunk from "redux-thunk";
 
-import "materialize-css/dist/css/materialize.min.css";
-import "materialize-css/dist/js/materialize.min.js";
-
 import rootReducer from "./store/reducers/rootReducer";
 
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const clt = new ApolloClient({
   uri: "http://localhost:8000/graphql",
