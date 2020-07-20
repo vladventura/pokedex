@@ -17,9 +17,8 @@ Table of contents:
 - SQLite as a Database (I think that for the size of this project, this should work)
 - GraphQL as our bridge between frontend and backend (while using Apollo on the frontend)
 - JS/CSS (React) for the frontend
-- Redux as our state management for React
-- Thunk as a middleware for fetching data from the backend
-- Axios as our fetcher
+- Redux as our state management for React (As of right now, Redux is disabled. We're using Apollo mostly for our queries)
+- Thunk as a middleware for fetching data from the backend (same with redux)
 
 # Setup
 
@@ -39,7 +38,7 @@ cd client
 npm install
 ```
 
-Which will install dependencies like [Materialize](https://materializecss.com/), [Redux](https://redux.js.org/), [Apollo](https://www.apollographql.com/docs/react/), [Thunk](https://github.com/reduxjs/redux-thunk) and [Axios](https://www.axios.com/). After this you should then be able to run the [React](https://reactjs.org/) frontend of the app
+Which will install dependencies like [Materialize](https://materializecss.com/), [Redux](https://redux.js.org/), [Apollo](https://www.apollographql.com/docs/react/) and [Thunk](https://github.com/reduxjs/redux-thunk). After this you should then be able to run the [React](https://reactjs.org/) frontend of the app
 
 `npm start`
 
@@ -91,9 +90,9 @@ And that should be all for setup! Make sure both backend and frontend are runnin
 
 I think that I'm mostly doing this app just to learn, but that doesn't take away the fact that I can add some cool features to it. This roadmap will help me visualize where the app as of right now and I think that it'll motivate me to move forward with the app.
 
-| Current State of the App                        | Goals for next push to master  | Goals for next week              | Goals for next month          |
-| ----------------------------------------------- | ------------------------------ | -------------------------------- | ----------------------------- |
-| As of right now the app hasn't even started yet | Make a design with materialize | Show all Pokemon on the frontend | Implement some kind of search |
+| Current State of the App                                                                                            | Goals for next push to master                                                            | Goals for next week                                                                           | Goals for next month                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| We have some customization as of right now and we can see all of the Pokemon in the Django backend on the frontend. | I think that for now, as a placeholder, we can say that improving the frontend is a goal | Have badges for each Pokemon game so we can display when were they introduced to the universe | Have some established view as to where the app should be. Albeit a single page app that shows either minimal/trivial information about each Pokemon or a multi paged app where we can show much more information. I think that if we do go for the second option, maybe then we'll have to properly introduce Redux to the app so we have more control over the flow of it. I think I have some ideas as to how these two should be used. |
 
 # Contributing
 
