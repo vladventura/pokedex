@@ -9,8 +9,7 @@ const Pokemon = (props) => {
     "--color2": props.type2 ? COLOR_MAP[props.type2] : COLOR_MAP[type1],
   };
   return (
-    <div className="card pokemon-card" data-testid="pokemon-card-container">
-      <div className="pokemon-card-highlight" style={style}>
+    <div className="card pokemon-card" style={style} data-testid="pokemon-card-container">
           <img
             className="card-img"
             alt="pokemon"
@@ -22,9 +21,7 @@ const Pokemon = (props) => {
             </div>
           <div className="card-text text" data-testid="pokemon-description">{description}</div>
         </div>
-      </div>
     </div>
-
   );
 };
 

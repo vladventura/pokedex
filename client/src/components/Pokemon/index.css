@@ -6,16 +6,19 @@
 .pokemon-card {
   width: 20rem;
   margin: 1rem;
-  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .pokemon-card .card-body{
   background: linear-gradient(181deg, var(--color) 20%, var(--color2));
 }
 
-.pokemon-card:hover .pokemon-card-highlight {
+.pokemon-card:hover .text{
   color: rgba(255, 255, 255, 1)
 }
 
