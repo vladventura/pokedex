@@ -1,6 +1,5 @@
 import React from "react";
 import "./Pokemon.css";
-import LazyLoad from "react-lazyload";
 import { COLOR_MAP } from "../constants";
 
 const Pokemon = (props) => {
