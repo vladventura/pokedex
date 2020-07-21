@@ -1,0 +1,24 @@
+:root {
+  --color: #3451af;
+  --color2: #acacac;
+}
+
+.pokemon-card {
+  width: 20rem;
+  margin: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.pokemon-card .card-body{
+  background: linear-gradient(181deg, var(--color) 20%, var(--color2));
+}
+
+.pokemon-card:hover .pokemon-card-highlight {
+  color: rgba(255, 255, 255, 1)
+}
+
+.pokemon-card img {
+  background: linear-gradient(9deg, var(--color) 40%, var(--color2));
+}
