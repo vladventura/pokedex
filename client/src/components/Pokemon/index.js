@@ -11,6 +11,7 @@ const Pokemon = (props) => {
   return (
     <div className="card pokemon-card" style={style} data-testid="pokemon-card-container">
           <img
+            data-testid="pokemon-img"
             className="card-img"
             alt="pokemon"
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${childId}.png`}

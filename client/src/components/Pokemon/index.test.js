@@ -14,7 +14,7 @@ describe("Testing the Pokemon component", () => {
     suspenseFallback: true,
   });
   test("The image is on the component (or rather, on the lazy loader)", () => {
-    const image = wrapper.find({ "data-testid": "lazyload-img" });
+    const image = wrapper.find({ "data-testid": "pokemon-img" });
     expect(image).toHaveLength(1);
   });
   test("The Pokemon name is present", () => {
