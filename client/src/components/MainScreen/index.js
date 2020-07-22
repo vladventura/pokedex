@@ -6,7 +6,7 @@ const MainScreen = () => {
   const [name, setName] = useState("");
 
   return (
-    <div className="container-fluid" align="center">
+    <div className="container-grid" align="center">
       <ThrottledInput
         value={name}
         onChange={(value) => setName(value)}
