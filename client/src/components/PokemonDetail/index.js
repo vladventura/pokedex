@@ -10,8 +10,9 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
-import { toUpperCase } from '../utils';
 import './index.css';
+import PokemonImageAndName from './PokemonImageAndName';
+import {COLOR_MAP} from '../../constants';
 
 const PokemonDetail = (props) => {
     const id = props.match.params.id;
@@ -22,6 +23,8 @@ const PokemonDetail = (props) => {
             pokemon (id: ${id}) {
                 name
                 description
+                type1
+                type2
             }
         }
     `
@@ -29,34 +32,30 @@ const PokemonDetail = (props) => {
 
     const { data, loading } = useQuery(POKEMON_BY_ID)
 
-    if (loading && !data) {
+    if (loading) {
         return (<div>Loading Data</div>);
     } else {
-        if (data.pokemon) {
+        const {type1, type2, name, description} = data.pokemon;
+        const color1 = COLOR_MAP[type1];
+        const color2 = type2? COLOR_MAP[type2] : color1;
+        const style = {
+            "--color1": color1,
+            "--color2": color2
+        };
+
             return (
-                <div className="container-grid pokemon-grid">
-                    <div className="container row">
-                        {/* Maybe this should be its own component */}
-                        <div className="col pokemon-grid-top">
-                            <span className="col pokemon-name">
-                                {toUpperCase(data.pokemon.name)}
-                            </span>
-                            <img
-                                className="img-fluid pokemon-image"
-                                alt="pokemon"
-                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-                            />
+                <div className="container-grid pokemon-grid" style={style}>
+                    <div className="row">
+                        <div className="col pokemon-left-side" align="left">
+                            <PokemonImageAndName name={name} pokeId={id} />
                         </div>
-                    </div>
-                    <div className="container row pokemon-grid-body">
-                        <div className="container col pokemon-description">
+                        <div className="col pokemon-right-side" align="right">
                             <span>
-                                HELLO
+                                {description}
                             </span>
                         </div>
                     </div>
                 </div>);
-        }
     }
 };
 
