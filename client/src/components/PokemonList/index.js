@@ -1,7 +1,7 @@
 import React from "react";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
-import Pokemon from "./Pokemon";
+import Pokemon from "../Pokemon";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
