@@ -1,4 +1,5 @@
 import React from "react";
+import {toUpperCase} from '../utils'
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import Pokemon from "../Pokemon";
@@ -42,7 +43,7 @@ const PokemonList = (props) => {
     if (data.pokemons.length) {
       let content = data.pokemons.map(
         ({ id, name, description, type1, type2 }) => {
-          let capName = name[0].toUpperCase() + name.slice(1);
+          let capName = toUpperCase(name);
           return (
             <Pokemon
               key={capName}
