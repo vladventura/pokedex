@@ -3,6 +3,8 @@ import PokemonList from "./components/PokemonList";
 import "./components/ThrottledInput";
 import ThrottledInput from "./components/ThrottledInput";
 
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
 function App() {
   const [name, setName] = useState("");
 
