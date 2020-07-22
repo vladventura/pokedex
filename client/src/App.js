@@ -1,23 +1,16 @@
-import React, { useState } from "react";
-import PokemonList from "./components/PokemonList";
-import Container from "react-bootstrap/Container";
-import "./components/ThrottledInput";
-
-
-import ThrottledInput from "./components/ThrottledInput";
+import React from "react";
+import MainScreen from "./components/MainScreen";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [name, setName] = useState("");
-
   return (
-    <Container align="center" fluid>
-      <ThrottledInput
-        value={name}
-        onChange={(value) => setName(value)}
-        id="name"
-      />
-      <PokemonList startsWith={name} />
-    </Container>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={MainScreen} />
+        {/* For later. Uncomment this when ready */}
+        {/* <Route path="/pokemon/:id" component={PokemonDetails} /> */}
+      </Switch>
+    </BrowserRouter>
   );
 }
 

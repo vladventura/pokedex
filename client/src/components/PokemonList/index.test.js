@@ -1,9 +1,9 @@
 import React from "react";
 import { render, findAllByTestId } from "@testing-library/react";
-import PokemonList from "./PokemonList";
+import PokemonList from ".";
 
 import { MockedProvider } from "@apollo/react-testing";
-import { general } from "./mocks/PokemonListMock";
+import { general } from "../mocks/PokemonListMock";
 import "@testing-library/jest-dom";
 
 describe("Testing the Pokemon List", () => {

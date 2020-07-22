@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ThrottledInput.scss";
+import "./ThrottledInput.css";
 export default class ThrottledInput extends Component {
   state = {
     value: this.props.value,
