@@ -33,7 +33,13 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "no-multiple-empty-lines": ["error", { "max": 3, "maxEOF": 0 }]
+      "no-multiple-empty-lines": [
+        "error",
+        {
+          "max": 3,
+          "maxEOF": 0
+        }
+      ]
     }
   },
   "browserslist": {
@@ -52,7 +58,6 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
-    "eslint": "^7.5.0",
     "pre-commit": "^1.2.2"
   },
   "jest": {
