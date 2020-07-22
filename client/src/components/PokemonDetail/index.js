@@ -10,32 +10,50 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
+import {toUpperCase} from '../utils';
 
 
 const PokemonDetail = (props) => {
+    const id = props.match.params.id;
 
-    return (
-        <div className="container pokemon-grid">
-            <div className="container pokemon-grid-top">
-                <div className="container pokemon-image">
-                    <img
-                        data-testid="pokemon-img"
-                        className="card-img"
-                        alt="pokemon"
-                        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`}
-                    />
-                </div>
-                <div className="container pokemon-name">
-                    <span>
-                        Pokemon Name here
-                    </span>
-                </div>
-            </div>
-            <div className="container pokemon-grid-body">
-                <div className="container pokemon-description"></div>
-            </div>
-        </div>);
+    const POKEMON_BY_ID = (
+        gql`
+        query{
+            pokemon (id: ${id}) {
+                name
+                description
+            }
+        }
+    `
+    );
 
+    const { data, loading } = useQuery(POKEMON_BY_ID)
+
+    if (loading && !data) {
+        return (<div>Loading Data</div>);
+    } else {
+        if (data.pokemon) {
+            return (
+                <div className="container pokemon-grid">
+                    <div className="container pokemon-grid-top">
+                        <div className="container pokemon-name">
+                            <span>
+                                {toUpperCase(data.pokemon.name)}
+                            </span>
+                        </div>
+                        <div className="container pokemon-image">
+                            <img
+                                alt="pokemon"
+                                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+                            />
+                        </div>
+                    </div>
+                    <div className="container pokemon-grid-body">
+                        <div className="container pokemon-description"></div>
+                    </div>
+                </div>);
+        }
+    }
 };
 
 export default PokemonDetail;
