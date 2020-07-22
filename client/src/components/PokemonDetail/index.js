@@ -10,8 +10,8 @@
 import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
-import {toUpperCase} from '../utils';
-
+import { toUpperCase } from '../utils';
+import './index.css';
 
 const PokemonDetail = (props) => {
     const id = props.match.params.id;
@@ -34,22 +34,26 @@ const PokemonDetail = (props) => {
     } else {
         if (data.pokemon) {
             return (
-                <div className="container pokemon-grid">
-                    <div className="container pokemon-grid-top">
-                        <div className="container pokemon-name">
-                            <span>
+                <div className="container-grid pokemon-grid">
+                    <div className="container row">
+                        {/* Maybe this should be its own component */}
+                        <div className="col pokemon-grid-top">
+                            <span className="col pokemon-name">
                                 {toUpperCase(data.pokemon.name)}
                             </span>
-                        </div>
-                        <div className="container pokemon-image">
                             <img
+                                className="img-fluid pokemon-image"
                                 alt="pokemon"
                                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
                             />
                         </div>
                     </div>
-                    <div className="container pokemon-grid-body">
-                        <div className="container pokemon-description"></div>
+                    <div className="container row pokemon-grid-body">
+                        <div className="container col pokemon-description">
+                            <span>
+                                HELLO
+                            </span>
+                        </div>
                     </div>
                 </div>);
         }
