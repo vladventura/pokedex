@@ -1,23 +1,10 @@
+:root {
+    --color1: #3451af;
+    --color2: #acacac;
+}
+
 .pokemon-grid {
     margin: 2rem;
-    background-color: red;
-}
-
-.pokemon-grid-top{
-    background-color: orange;
-}
-
-.top {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-}
-
-.pokemon-name {
-    height: min-content;
-    width: min-content;
-}
-
-.img-fluid{ 
-    width: 20rem;
+    padding: 2rem;
+    background: linear-gradient(9deg, var(--color1) 40%, var(--color2));
 }
