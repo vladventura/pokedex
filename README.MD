@@ -29,6 +29,8 @@ git clone https://github.com/vladventura/pokedex.git
 cd pokedex
 ```
 
+From here you have the **HIGHLY SUGGESTED** option of copying the pre-commit hook to your .git directory. Notice that you will need to finish the frontend setup and the backend setup as well before you commit, because the linters are used on it 🙂. Also, for the python linter (black) you also must either have it installed locally **OR IF YOU USE A VIRTUALENV FOR PYTHON YOU MUST COMMIT WITH IT ON**, although I haven't tested to lint with the venv's black so I would just say install black locally. 🙂🙂🙂🙂🙂🙂 
+
 ## Frontend Setup
 
 To set up the frontend, we should move into the frontend directory and run an [npm](https://nodejs.org/en/) command
