@@ -1,0 +1,17 @@
+.row {
+    position: relative;
+    text-align: center;
+}
+
+.pokemon-name {
+    position: absolute;
+    left: 7rem;
+}
+
+.pokemon-top{
+    max-width: fit-content;
+}
+
+.img-fluid {
+    width: 20rem;
+}
