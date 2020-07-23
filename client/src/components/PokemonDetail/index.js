@@ -55,10 +55,13 @@ const PokemonDetail = (props) => {
                     <div className="col pokemon-right-side" align="right">
                         <div className="icon-name-banner container row">
                             <div className="col icon-id" align="left">
-                                No.{id}
+                                <img className="pokemon-icon" alt="pokemon" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />
+                                <span className="pokemon-id">No.{id}</span>
                             </div>
                             <div className="col-lg-8 col name-banner">
-                                {toUpperCase(name)}
+                                <span className="pokemon-name">
+                                    {toUpperCase(name)}
+                                </span>
                             </div>
                         </div>
                     </div>
