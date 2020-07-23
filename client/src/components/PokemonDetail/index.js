@@ -11,7 +11,6 @@ import React from 'react';
 import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
 import './index.css';
-import PokemonImageAndName from './PokemonImageAndName';
 import { COLOR_MAP } from '../../constants';
 import { toUpperCase } from '../utils';
 
@@ -36,7 +35,7 @@ const PokemonDetail = (props) => {
     if (loading) {
         return (<div>Loading Data</div>);
     } else {
-        const { type1, type2, name, description } = data.pokemon;
+        const { type1, type2, name } = data.pokemon;
         const color1 = COLOR_MAP[type1];
         const color2 = type2 ? COLOR_MAP[type2] : color1;
         const style = {
