@@ -4,7 +4,18 @@
 }
 
 .pokemon-grid {
+    border-radius: 1rem;
     margin: 2rem;
     padding: 2rem;
-    background: linear-gradient(9deg, var(--color1) 40%, var(--color2));
+    background: linear-gradient(
+        130deg, 
+    #acacac 3%, 
+    #e8291c 3%, 
+    #e8291c 10%, 
+    #ff6200 10%, 
+    #ff6200 80%, 
+    #e8291c 80%,
+    #e8291c 97%,
+    #acacac 97%
+    );
 }
