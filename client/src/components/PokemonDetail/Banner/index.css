@@ -1,0 +1,28 @@
+.banner {
+    height: 2rem;
+    width: 25rem;
+    background: linear-gradient(130deg, #f0501e 30%, #000000 30%);
+}
+
+.icon-id > img {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: -24px;
+    left: -15px;
+}
+
+.icon-id > span {
+    position: absolute;
+    left: 50px;
+    top: 5px;
+    font-size: 1.2rem;
+}
+
+.name-banner{
+    text-align: left;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 20px;
+}
