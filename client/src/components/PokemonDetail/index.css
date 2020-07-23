@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/3a98c83f1e41bd6709a6d0d1654dc28b?family=Fudd);
+
 :root {
     --color1: #3451af;
     --color2: #acacac;
@@ -18,16 +20,37 @@
     var(--color2) 97%,
     #acacac 97%
     );
+    font-size: 1.2rem;
+    font-family: 'Fudd';
 }
 
 .icon-name-banner {
-
     height: 2rem;
     width: 25rem;
-    background: linear-gradient(130deg, #f0501e 30%, #000000 30%);
+    background: linear-gradient(130deg, #f0501e 35%, #000000 35%);
+}
+
+.icon-id > img {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: -24px;
+    left: -15px;
+}
+
+.icon-id > span {
+    position: absolute;
+    left: 50px;
+    top: 5px;
 }
 
 .name-banner{
     text-align: left;
     color: white;
+    font-size: 1.5rem;
+}
+
+.name-banner > span {
+    position: absolute;
+    left: 20px;
 }
