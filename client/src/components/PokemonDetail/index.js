@@ -26,7 +26,7 @@ const PokemonDetail = (props) => {
     if (loading) {
         return (<div>Loading Data</div>);
     } else {
-        const { type1, type2, name } = data.pokemon;
+        const { type1, type2, name, description } = data.pokemon;
         const color1 = COLOR_MAP[type1];
         const color2 = type2 ? COLOR_MAP[type2] : color1;
         const style = {
@@ -45,6 +45,34 @@ const PokemonDetail = (props) => {
                     </div>
                     <div className="col pokemon-right-side">
                         <Banner name={name} pokeId={id} />
+                        <div className="row container pokemon-info">
+                            <div className="container row pokemon-species">Pokemon Species Text</div>
+                            <div className="row table-responsive pokemon-table">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="col">Type</th>
+                                            <td>{type1} {data.pokemon.type2 || ""}</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Height</th>
+                                            <td>6'3"</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Weight</th>
+                                            <td>266.7 lbs.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Generation</th>
+                                            <td>1</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="container row pokemon-pokedex-entry">
+                                <span>{description}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>);

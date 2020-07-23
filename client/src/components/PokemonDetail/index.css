@@ -3,6 +3,7 @@
 :root {
     --color1: #3451af;
     --color2: #acacac;
+    --entry-bg: #ededed;
 }
 
 .pokemon-grid {
@@ -26,4 +27,20 @@
 .pokemon-image {
     width: 20rem;
     align-self: center;
+}
+
+.pokemon-info {
+    margin-top: 1rem;
+    margin-left: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: 0;
+}
+
+.pokemon-species {
+    justify-content: center;
+    background: var(--entry-bg);
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
 }
