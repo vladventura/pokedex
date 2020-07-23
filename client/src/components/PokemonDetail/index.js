@@ -13,6 +13,7 @@ import { useQuery } from 'react-apollo';
 import './index.css';
 import { COLOR_MAP } from '../../constants';
 import { toUpperCase } from '../utils';
+import Banner from './Banner';
 
 const PokemonDetail = (props) => {
     const id = props.match.params.id;
@@ -45,25 +46,15 @@ const PokemonDetail = (props) => {
         return (
             <div className="container-grid pokemon-grid" style={style}>
                 <div className="row">
-                    <div className="col pokemon-left-side" align="left">
+                    <div className="col pokemon-left-side">
                         <img
                             className="img-fluid pokemon-image"
                             alt="pokemon"
                             src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
                         />
                     </div>
-                    <div className="col pokemon-right-side" align="right">
-                        <div className="icon-name-banner container row">
-                            <div className="col icon-id" align="left">
-                                <img className="pokemon-icon" alt="pokemon" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} />
-                                <span className="pokemon-id">No.{id}</span>
-                            </div>
-                            <div className="col-lg-8 col name-banner">
-                                <span className="pokemon-name">
-                                    {toUpperCase(name)}
-                                </span>
-                            </div>
-                        </div>
+                    <div className="col pokemon-right-side">
+                        <Banner name={name} pokeId={id} />
                     </div>
                 </div>
             </div>);
