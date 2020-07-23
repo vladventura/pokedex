@@ -10,12 +10,24 @@
     background: linear-gradient(
         130deg, 
     #acacac 3%, 
-    #e8291c 3%, 
-    #e8291c 10%, 
-    #ff6200 10%, 
-    #ff6200 80%, 
-    #e8291c 80%,
-    #e8291c 97%,
+    var(--color2) 3%, 
+    var(--color2) 10%, 
+    var(--color1) 10%, 
+    var(--color1) 80%, 
+    var(--color2) 80%,
+    var(--color2) 97%,
     #acacac 97%
     );
+}
+
+.icon-name-banner {
+
+    height: 2rem;
+    width: 25rem;
+    background: linear-gradient(130deg, #f56056 30%, #343434 30%);
+}
+
+.name-banner{
+    text-align: left;
+    color: white;
 }
