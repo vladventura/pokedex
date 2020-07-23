@@ -12,7 +12,8 @@ import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
 import './index.css';
 import PokemonImageAndName from './PokemonImageAndName';
-import {COLOR_MAP} from '../../constants';
+import { COLOR_MAP } from '../../constants';
+import { toUpperCase } from '../utils';
 
 const PokemonDetail = (props) => {
     const id = props.match.params.id;
@@ -35,27 +36,35 @@ const PokemonDetail = (props) => {
     if (loading) {
         return (<div>Loading Data</div>);
     } else {
-        const {type1, type2, name, description} = data.pokemon;
+        const { type1, type2, name, description } = data.pokemon;
         const color1 = COLOR_MAP[type1];
-        const color2 = type2? COLOR_MAP[type2] : color1;
+        const color2 = type2 ? COLOR_MAP[type2] : color1;
         const style = {
             "--color1": color1,
             "--color2": color2
         };
-
-            return (
-                <div className="container-grid pokemon-grid" style={style}>
-                    <div className="row">
-                        <div className="col pokemon-left-side" align="left">
-                            <PokemonImageAndName name={name} pokeId={id} />
-                        </div>
-                        <div className="col pokemon-right-side" align="right">
-                            <span>
-                                {description}
-                            </span>
+        return (
+            <div className="container-grid pokemon-grid" style={style}>
+                <div className="row">
+                    <div className="col pokemon-left-side" align="left">
+                        <img
+                            className="img-fluid pokemon-image"
+                            alt="pokemon"
+                            src={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
+                        />
+                    </div>
+                    <div className="col pokemon-right-side" align="right">
+                        <div className="icon-name-banner container row">
+                            <div className="col icon-id" align="left">
+                                No.{id}
+                            </div>
+                            <div className="col-lg-8 col name-banner">
+                                {toUpperCase(name)}
+                            </div>
                         </div>
                     </div>
-                </div>);
+                </div>
+            </div>);
     }
 };
 
