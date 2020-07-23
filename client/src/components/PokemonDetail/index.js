@@ -12,7 +12,6 @@ import { gql } from 'apollo-boost';
 import { useQuery } from 'react-apollo';
 import './index.css';
 import { COLOR_MAP } from '../../constants';
-import { toUpperCase } from '../utils';
 import Banner from './Banner';
 
 const PokemonDetail = (props) => {
