@@ -9,18 +9,20 @@
 .pokemon-grid {
     font-family: 'Fudd';
     border-radius: 1rem;
-    margin: 2rem;
+    margin-top: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     padding: 2rem;
     background: linear-gradient(
         130deg, 
-    #acacac 3%, 
+    #efd9db 3%, 
     var(--color2) 3%, 
     var(--color2) 10%, 
     var(--color1) 10%, 
     var(--color1) 80%, 
     var(--color2) 80%,
     var(--color2) 97%,
-    #acacac 97%
+    #efd9db 97%
     );
 }
 
@@ -31,16 +33,31 @@
 
 .pokemon-info {
     margin-top: 1rem;
-    margin-left: 0;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: 0;
+    padding-right: 3rem;
+    padding-left: 3rem;
 }
 
 .pokemon-species {
     justify-content: center;
     background: var(--entry-bg);
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: 0px;
+    margin-bottom: 0.5rem;
+}
+
+.pokemon-pokedex-entry{
+    background: var(--entry-bg);
+    font-size: 1.3rem;
+    margin-right: 3rem;
+    height: 7rem;
+}
+
+th {
+    background: #dbdbd9;
+}
+
+td {
+    background: #ffffff;
+}
+
+th, td {
+    border:1px solid #d3d3d1;
 }
