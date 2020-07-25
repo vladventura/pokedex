@@ -3,7 +3,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import "./index.css";
 import { COLOR_MAP } from "../../constants";
-import Banner from "./Banner";
+import Banner from "./PokedexBanner";
 
 const PokemonDetail = (props) => {
   const id = props.match.params.id;

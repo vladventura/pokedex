@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 import { toUpperCase } from "../../utils";
 
-const Banner = ({ name, pokeId }) => {
+const PokedexBanner = ({ name, pokeId }) => {
   return (
     <div className="row banner">
       <div className="col icon-id">
@@ -19,4 +19,4 @@ const Banner = ({ name, pokeId }) => {
   );
 };
 
-export default Banner;
+export default PokedexBanner;
