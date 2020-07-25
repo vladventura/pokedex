@@ -1,3 +1,11 @@
 # Dev environment
 .vscode
 .env
+
+# Python Virtual Environment files
+venv
+
+# Local scripts to help me work
+utils
+
+**/__pycache__/
