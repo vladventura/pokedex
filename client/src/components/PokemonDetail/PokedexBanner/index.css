@@ -47,12 +47,72 @@
   left: 20px;
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
   .row.banner {
     margin-left: 0;
     background: linear-gradient(
       130deg,
-      #f0501e calc(var(--name-sprite) + 15%),
+      #f0501e calc(var(--name-sprite) - 5%),
+      #000000 calc(var(--name-sprite) - 5%)
+    );
+  }
+  .icon-id > span {
+    left: 45px;
+    top: 5px;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) - 10%),
+      #000000 calc(var(--name-sprite) - 10%)
+    );
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) - 5%),
+      #000000 calc(var(--name-sprite) - 5%)
+    );
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) + 10%),
+      #000000 calc(var(--name-sprite) + 10%)
+    );
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) + 5%),
+      #000000 var(--name-sprite)
+    );
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) + 10%),
       #000000 var(--name-sprite)
     );
   }
@@ -67,5 +127,16 @@
     left: 45px;
     top: 5px;
     font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) + 15%),
+      #000000 var(--name-sprite)
+    );
   }
 }
