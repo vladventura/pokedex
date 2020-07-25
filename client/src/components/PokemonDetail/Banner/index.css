@@ -1,28 +1,71 @@
-.banner {
-    height: 2rem;
-    width: 25rem;
-    background: linear-gradient(130deg, #f0501e 30%, #000000 30%);
+:root {
+  --name-sprite: 30%;
+}
+
+.container.banner {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col.name-banner {
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.row.banner {
+  height: 2rem;
+  background: linear-gradient(
+    130deg,
+    #f0501e var(--name-sprite),
+    #000000 var(--name-sprite)
+  );
 }
 
 .icon-id > img {
-    width: 4rem;
-    height: 4rem;
-    position: absolute;
-    top: -24px;
-    left: -15px;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: -24px;
+  left: -15px;
 }
 
 .icon-id > span {
-    position: absolute;
-    left: 50px;
-    top: 5px;
-    font-size: 1.2rem;
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  font-size: 1.2rem;
 }
 
-.name-banner{
+.name-banner {
+  text-align: left;
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 20px;
+}
+
+@media (max-width: 1024px) {
+  .row.banner {
+    margin-left: 0;
+    background: linear-gradient(
+      130deg,
+      #f0501e calc(var(--name-sprite) + 15%),
+      #000000 var(--name-sprite)
+    );
+  }
+  .name-banner {
     text-align: left;
     color: white;
     font-size: 1.5rem;
     position: absolute;
-    left: 20px;
+    left: 0;
+  }
+  .icon-id > span {
+    left: 45px;
+    top: 5px;
+    font-size: 1.3rem;
+  }
 }
