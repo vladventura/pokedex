@@ -3,7 +3,8 @@ import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import "./index.css";
 import { COLOR_MAP } from "../../constants";
-import Banner from "./PokedexBanner";
+import PokedexBanner from "./PokedexBanner";
+import PokedexTable from "./PokedexTable";
 
 const PokemonDetail = (props) => {
   const id = props.match.params.id;
@@ -42,49 +43,17 @@ const PokemonDetail = (props) => {
             />
           </div>
           <div className="col pokemon-right-side">
-            <Banner name={name} pokeId={id} />
+            <PokedexBanner name={name} pokeId={id} />
             <div className="pokemon-info">
               <div className="row pokemon-species">Pokemon Species Text</div>
-              <div className="row pokemon-table">
-                <table className="table pokedex-table">
-                  <tbody>
-                    <tr>
-                      <th className="pokedex-table-header" scope="col">
-                        <span>Type</span>
-                      </th>
-                      <td className="pokedex-table-data">
-                        <span>
-                          {type1} {data.pokemon.type2 || ""}
-                        </span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th className="pokedex-table-header" scope="col">
-                        <span>Height</span>
-                      </th>
-                      <td className="pokedex-table-data">
-                        <span>6'3"</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th className="pokedex-table-header" scope="col">
-                        <span>Weight</span>
-                      </th>
-                      <td className="pokedex-table-data">
-                        <span>266.7 lbs.</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th className="pokedex-table-header" scope="col">
-                        <span>Generation</span>
-                      </th>
-                      <td className="pokedex-table-data">
-                        <span>I</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <PokedexTable
+                generation="I"
+                height={`6'13"`}
+                weight="266.7 lbs."
+                type1={type1}
+                type2={type2 || ""}
+                classes="row pokemon-table"
+              />
               <div className="row pokedex-entry">
                 <span>{description}</span>
               </div>
