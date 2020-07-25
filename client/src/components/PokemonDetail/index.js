@@ -45,7 +45,7 @@ const PokemonDetail = (props) => {
                     </div>
                     <div className="col pokemon-right-side">
                         <Banner name={name} pokeId={id} />
-                        <div className="row container pokemon-info">
+                        <div className="row pokemon-info">
                             <div className="container row pokemon-species">Pokemon Species Text</div>
                             <div className="row table-responsive pokemon-table">
                                 <table class="table">
