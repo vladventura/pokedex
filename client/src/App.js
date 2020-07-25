@@ -1,5 +1,5 @@
 import React from "react";
-import MainScreen from "./components/MainScreen";
+import {MainScreen, PokemonDetail} from "./components/";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -7,8 +7,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainScreen} />
-        {/* For later. Uncomment this when ready */}
-        {/* <Route path="/pokemon/:id" component={PokemonDetails} /> */}
+        <Route path="/pokemon/:id" component={PokemonDetail} />
       </Switch>
     </BrowserRouter>
   );
