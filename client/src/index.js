@@ -5,32 +5,28 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-
-import thunk from "redux-thunk";
-
-import rootReducer from "./store/reducers/rootReducer";
 
 import { ApolloProvider } from "@apollo/react-hooks";
-import ApolloClient from "apollo-boost";
-
+import { ApolloClient } from "apollo-client";
+import { createHttpLink } from "apollo-link-http";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const clt = new ApolloClient({
+const httpLink = createHttpLink({
   uri: "http://localhost:8000/graphql",
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={clt}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")

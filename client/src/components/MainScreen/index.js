@@ -6,13 +6,15 @@ const MainScreen = () => {
   const [name, setName] = useState("");
 
   return (
-    <div className="container-grid" align="center">
+    <div className="container-fluid" align="center">
       <ThrottledInput
         value={name}
         onChange={(value) => setName(value)}
         id="name"
       />
-      <PokemonList startsWith={name} />
+      <div className="container-fluid">
+        <PokemonList startsWith={name} />
+      </div>
     </div>
   );
 };
