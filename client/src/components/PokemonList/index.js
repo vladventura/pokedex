@@ -1,10 +1,8 @@
 import React from "react";
-import {toUpperCase} from '../utils'
+import { toUpperCase } from "../utils";
 import { gql } from "apollo-boost";
 import { useQuery } from "react-apollo";
 import Pokemon from "../Pokemon";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 
 export const GENERAL_QUERY = gql`
   query {
@@ -32,35 +30,30 @@ const PokemonList = (props) => {
       }
     `
     : GENERAL_QUERY;
+
   const { data, loading } = useQuery(QUERY_POKEMON);
+
   if (loading && !data) {
-    return (
-      <div>
-        <p>Loading pokemon</p>
-      </div>
-    );
+    return <div>Loading...</div>;
   } else {
     if (data.pokemons.length) {
-      let content = data.pokemons.map(
-        ({ id, name, description, type1, type2 }) => {
-          let capName = toUpperCase(name);
-          return (
-            <Pokemon
-              key={capName}
-              id={name}
-              childId={id}
-              name={capName}
-              description={description}
-              type1={type1}
-              type2={type2}
-            />
-          );
-        }
-      );
       return (
-        <Col>
-          <Row>{content}</Row>
-        </Col>
+        <div className="row">
+          {data.pokemons.map(({ id, name, description, type1, type2 }) => {
+            let capName = toUpperCase(name);
+            return (
+              <Pokemon
+                key={id}
+                id={name}
+                childId={id}
+                name={capName}
+                description={description}
+                type1={type1}
+                type2={type2}
+              />
+            );
+          })}
+        </div>
       );
     } else {
       return (
