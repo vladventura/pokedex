@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./index.css";
 import { COLOR_MAP } from "../../constants";
-import ContentLoader, { List } from "react-content-loader";
+import ContentLoader from "react-content-loader";
 
 const Pokemon = (props) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,20 +53,14 @@ const Pokemon = (props) => {
           onClick={handleClick}
         />
       )}
-      {isLoaded ? (
-        <div className="card-body">
-          <div className="card-title text" data-testid="pokemon-name">
-            {name}
-          </div>
-          <div className="card-text text" data-testid="pokemon-description">
-            {description}
-          </div>
+      <div className="card-body">
+        <div className="card-title text" data-testid="pokemon-name">
+          {name}
         </div>
-      ) : (
-        <div className="card-body">
-          <List />
+        <div className="card-text text" data-testid="pokemon-description">
+          {description}
         </div>
-      )}
+      </div>
     </div>
   );
 };
