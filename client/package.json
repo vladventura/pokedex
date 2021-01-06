@@ -13,7 +13,7 @@
     "apollo-link-error": "^1.1.13",
     "apollo-link-http": "^1.5.17",
     "apollo-link-state": "^0.4.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.10.4",
